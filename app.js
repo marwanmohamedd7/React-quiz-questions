@@ -56,7 +56,7 @@ app.get("/api/v1/questions", (_, res) => {
     status: "success",
     results: questions.length,
     data: {
-      questions,
+      questions: questions.questions,
     },
   });
 });
