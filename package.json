@@ -1,0 +1,14 @@
+{
+  "name": "react-quiz-apis",
+  "version": "1.0.0",
+  "description": "exposing react-quiz questions through APIs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marwan Youssef",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
