@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 8080;
 // **1. Define the allowed origins**
 // Use an array to allow multiple specific domains
 const allowedOrigins = [
+  "http://localhost:3000", // <-- Local development React app
   "https://marwan-react-quiz.vercel.app", // <-- The one that needs access
   // Add other domains, like your future production URL, here if needed
 ];
