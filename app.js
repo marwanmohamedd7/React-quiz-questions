@@ -2,8 +2,37 @@ const fs = require("fs");
 const express = require("express");
 
 const app = express();
-
+const cors = require("cors");
 const PORT = process.env.PORT || 8080;
+
+// ----------------------------------------------------
+// **1. Define the allowed origins**
+// Use an array to allow multiple specific domains
+const allowedOrigins = [
+  "https://marwan-react-quiz.vercel.app", // <-- The one that needs access
+  // Add other domains, like your future production URL, here if needed
+];
+
+// ----------------------------------------------------
+// **2. Configure and use the CORS middleware**
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg =
+        "The CORS policy for this site does not allow access from the specified Origin.";
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Define allowed HTTP methods
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+// ----------------------------------------------------
 
 // Start server
 app.listen(PORT);
