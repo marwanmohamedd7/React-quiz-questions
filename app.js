@@ -14,7 +14,7 @@ const allowedOrigins = [
   // Add other domains, like your future production URL, here if needed
 ];
 
-// ----------------------------------------------------
+// -----------------------------------------------------
 // **2. Configure and use the CORS middleware**
 const corsOptions = {
   origin: function (origin, callback) {
